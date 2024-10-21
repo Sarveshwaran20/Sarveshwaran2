@@ -97,3 +97,26 @@ button:hover {
         height: 80px;
     }
 }
+.bottom-link {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1em;
+    color: #f5f5f5;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.bottom-link:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.left-link {
+    left: 20px;
+}
+
+.right-link {
+    right: 20px;
+}
