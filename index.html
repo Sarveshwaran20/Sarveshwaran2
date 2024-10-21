@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Murder Mystery Escape Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+   <!-- Start Screen -->
+   <div id="start-screen">
+       <h1>Welcome to the Haunted High School Escape Room</h1>
+       <p>Solve the riddles, find the clues, and escape before time runs out!</p>
+       <button onclick="startGame()">Start Game</button>
+   </div>
+
+   <!-- Game Container -->
+   <div id="game-container" style="display:none;">
+       <div id="timer">Time Left: 10:00</div>
+       <div id="progress"></div>
+       
+       <!-- Main Room -->
+       <div id="main-room" class="room">
+           <h2>Main Room</h2>
+           <button onclick="goToRoom('science-lab')">Go to Science Lab</button>
+           <button onclick="goToRoom('art-room')">Go to Art Room</button>
+           <button onclick="goToRoom('library')">Go to Library</button>
+           <button onclick="goToRoom('washroom')">Go to Washroom</button>
+           <button onclick="goToRoom('cafeteria')">Go to Cafeteria</button>
+           <button onclick="goToRoom('hallway')">Go to Hallway</button>
+       </div>
+
+       <!-- Science Lab -->
+       <div id="science-lab" class="room" style="display:none;">
+           <h2>Science Lab</h2>
+           <button onclick="checkBottle()">Inspect Bottle</button>
+           <button onclick="inspectSkeleton()">Inspect Skeleton</button>
+           <button onclick="goToRoom('main-room')">Return to Main Room</button>
+       </div>
+
+       <!-- Art Room -->
+       <div id="art-room" class="room" style="display:none;">
+           <h2>Art Room</h2>
+           <button onclick="inspectPainting()">Inspect Painting</button>
+           <button onclick="checkEasel()">Inspect Easel</button>
+           <button onclick="goToRoom('main-room')">Return to Main Room</button>
+       </div>
+
+       <!-- Library -->
+       <div id="library" class="room" style="display:none;">
+           <h2>Library</h2>
+           <button onclick="searchBookshelf()">Search Bookshelf</button>
+           <button onclick="inspectStudyTable()">Inspect Study Table</button>
+           <button onclick="goToRoom('main-room')">Return to Main Room</button>
+       </div>
+
+       <!-- Washroom -->
+       <div id="washroom" class="room" style="display:none;">
+           <h2>Washroom</h2>
+           <button onclick="inspectMirror()">Inspect Mirror</button>
+           <button onclick="checkToilet()">Check Toilet</button>
+           <button onclick="goToRoom('main-room')">Return to Main Room</button>
+       </div>
+
+       <!-- Cafeteria -->
+       <div id="cafeteria" class="room" style="display:none;">
+           <h2>Cafeteria</h2>
+           <button onclick="inspectTable()">Inspect Table</button>
+           <button onclick="checkKitchen()">Check Kitchen</button>
+           <button onclick="goToRoom('main-room')">Return to Main Room</button>
+       </div>
+
+       <!-- Hallway -->
+       <div id="hallway" class="room" style="display:none;">
+           <h2>Hallway</h2>
+           <p>Boba ghost is around the corner...</p>
+           <button onclick="hallwayInteract()">Inspect Hallway</button>
+           <button onclick="goToRoom('basement')">Go to Basement</button>
+           <button onclick="goToRoom('attic')">Go to Attic</button>
+           <button onclick="goToRoom('main-room')">Return to Main Room</button>
+       </div>
+
+       <!-- Basement -->
+       <div id="basement" class="room" style="display:none;">
+           <h2>Basement</h2>
+           <button onclick="interactBasement()">Inspect Basement</button>
+           <button onclick="goToRoom('hallway')">Return to Hallway</button>
+       </div>
+
+       <!-- Attic -->
+       <div id="attic" class="room" style="display:none;">
+           <h2>Attic</h2>
+           <button onclick="interactAttic()">Inspect Attic</button>
+           <button onclick="goToRoom('hallway')">Return to Hallway</button>
+       </div>
+       
+       <!-- Puzzle Dialog -->
+       <div id="puzzle-dialog" style="display:none;">
+           <p id="puzzle-text"></p>
+           <input type="text" id="puzzle-input" placeholder="Enter your answer">
+           <button onclick="checkPuzzleAnswer()">Submit Answer</button>
+           <button onclick="document.getElementById('puzzle-dialog').style.display = 'none';">Cancel</button>
+       </div>
+   </div>
+   <button id="exit-button" style="display: none;" onclick="exitGame()">Exit</button>
+   <a href="https://hack.club/boba-manor" target="_blank">Open the door</a>
+   <script src="script.js"></script>
+</body>
+</html>
